@@ -1,0 +1,22 @@
+//Better Solution
+class Main {
+    public static  longSubArray(int[]arr,int target,int n){
+        int len=0;
+        for(int i=0;i<n;i++){
+            int sum=0;
+            for(int j=i;j<n;j++){
+                sum+=arr[j];
+                if(sum==target) 
+                   len=Math.max(len,j-i+1);
+            }
+        }
+        return len;
+    }
+    public static void main(String[] args) {
+        int []arr={2,3,5,1,9};
+        int target=10;
+        int n= arr.length;
+        int ans=longSubArray(arr,target,n);
+        System.out.println("answer is " +ans);
+    }
+}
